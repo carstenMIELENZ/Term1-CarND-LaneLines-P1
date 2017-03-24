@@ -66,32 +66,32 @@ The images below present the output image for each pipeline step.
 
 * Original image 
 
-![processed image 0](./pipeline_examples/image.start.jpg "Original")
+![processed image 0](./pipeline/image.start.jpg "Original")
 
 
 * Image after pipeline 1 
 
-![processed image 1](./pipeline_examples/image.pipeline1.jpg "Pipeline 1")
+![processed image 1](./pipeline/image.pipeline1.jpg "Pipeline 1")
 
 
 * Image after pipeline 2 
 
-![processed image 2](./pipeline_examples/image.pipeline2.jpg "Pipeline 2")
+![processed image 2](./pipeline/image.pipeline2.jpg "Pipeline 2")
 
 
 * Image after pipeline 3 
 
-![processed image 3](./pipeline_examples/image.pipeline3.jpg "Pipeline 3")
+![processed image 3](./pipeline/image.pipeline3.jpg "Pipeline 3")
 
 
 * Image after pipeline 4.1 
 
-![processed image 4](./pipeline_examples/image.pipeline4.jpg "Pipeline 4.1")
+![processed image 4](./pipeline/image.pipeline4.jpg "Pipeline 4.1")
 
 
 * Result image *
 
-![processed image 5](./pipeline_examples/image.processed.jpg "Result")
+![processed image 5](./pipeline/image.processed.jpg "Result")
                    
 
 
