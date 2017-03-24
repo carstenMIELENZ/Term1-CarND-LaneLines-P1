@@ -6,7 +6,6 @@
 
 * P1.jpynb     = code file
 * writeup.md   = report writeup
-
 * writeup.template.md    = report template
 * carnd-term1.1-env.yaml = anaconda enviroment
 
