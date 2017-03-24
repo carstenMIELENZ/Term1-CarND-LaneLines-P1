@@ -99,36 +99,37 @@ The images below present the output image for each pipeline step.
 
 The following potentail shortcomings are seen:
 
-* ** 1 - Fix Parameter Set**: The pipeline is setup with a fixed tuning paramter set. 
+* **1 - Fix Parameter Set**: The pipeline is setup with a fixed tuning paramter set.
 This could be an issue if environment conditions change, i.e. from sunshine to rain.
-*Possible problem: Lanes could not be detected.* 
+*Possible problem: Lanes could not be detected.*
+* **2 - Twisty Lanes or lanes with difficult bends**:
+Twisty lanes or lanes with difficult bends could cause the pipeline to wrongly detect lanes since its detection
+alogrithm uses linear line interpolation.
+*Possible problem: Lanes could not be detected or lane detection could offset from actual lane position.*
+* **3 - Line interpolation Algorithm of drawLines function**:
+The single line algorithm of the drawLines function uses a simple mean algorithm which could generate offsets
+from the actual lane position.
+*Possible problem: Lane detection could be not accurate, i.e. detected lanes could offset from actual lane position.*
+* **4 - Code of pipeline**:
+The code of the pipeline is not optimized in terms of coding-style, performance, memory consumption and robustness.
+*Possible problem: Code could be hard to read, slow, consuming to much memory or crash.*
+
+
+#### 3. Possible improvements to pipeline
 
 The following improvements versus the shortcomings of the previous section are seen:
 
-* ** 1 - Fix Parameter Set**: 
+* **1 - Fix Parameter Set**: 
 The parameter set of the pipeline could be changed versus the environment conditions.
 *Realization: Different parameter set profiles are defined versus different environment conditions, i.e.
 one profile for sunshine, one profile for rain etc. The trigger for changing the parameter set (profile) could be
 done by a light sensor inside the car.*
-* ** 2 - Twisty Lanes or lanes with difficult bends**: 
+* **2 - Twisty Lanes or lanes with difficult bends**: 
 The lane detection algorithm could use a non-linear interpolation algorithm in order to better detect non-linear lanes.
 *Realization: Use non-linear interpolation algorithm.*
-* ** 3 - Line interpolation Algorithm of drawLines function**: 
+* **3 - Line interpolation Algorithm of drawLines function**: 
 The line algorithm of the drawLines function could use a more sufficiated linearization algorithm which better interpolates.
 *Realization: Use a sufficiated linearization algorithm*
-* ** 4 - Code of pipeline**: 
+* **4 - Code of pipeline**: 
 The code of the pipeline needs to be optimized versus coding-style, performance, memory consumption and robustness.
 *Realization: Code reviews and optimizations. Create a class covering the full pipeline.*
-tens-macbook-air:CarND-LaneLines-P1 Carsten$ vi 
-**Finding Lane Lines on the Road** 
-
-
----
-### Reflection
-
-#### 1. Lane Detection Pipeline
-
-The Lane Detection Pipeline consists of 5 steps:
-
-* **Step 1**: Color convertion of the image from color into gray scale. 
-Reasonale: Gray scale images are better suited for edge detection algorithms.
